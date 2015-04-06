@@ -1,0 +1,41 @@
+{
+  "name": "stressor",
+  "version": "0.0.1",
+  "description": "Stress and load testing",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/enaqx/stressor"
+  },
+  "keywords": [
+    "stress",
+    "load",
+    "test",
+    "testing",
+    "response",
+    "automation",
+    "perfomance",
+    "benchmark"
+  ],
+  "author": "Nick Raienko <enaqxx@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/enaqx/stressor/issues"
+  },
+  "homepage": "https://github.com/enaqx/stressor",
+  "dependencies": {
+    "blob": "0.0.4",
+    "body-parser": "^1.12.2",
+    "browserify": "^9.0.7",
+    "browserify-middleware": "^5.0.2",
+    "express": "^4.12.3",
+    "forwarded-for": "^1.0.0",
+    "jquery": "^2.1.3",
+    "mustache-express": "^1.2.1",
+    "redis": "^0.12.1",
+    "socket.io": "^1.3.5",
+    "socket.io-client": "^1.3.5",
+    "socket.io-redis": "^0.1.4"
+  }
+}

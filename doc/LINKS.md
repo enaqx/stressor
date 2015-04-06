@@ -1,0 +1,21 @@
+Load Testing Tools:
+ * [loadtest](https://github.com/alexfernandez/loadtest)
+ * [siege](http://www.joedog.org/siege-home/)
+ * [httperf](https://github.com/httperf/httperf)
+ * [Apache ab](http://httpd.apache.org/docs/2.4/programs/ab.html)
+ * [Apache JMeter](http://jmeter.apache.org/)
+ * [BlazeMeter](http://blazemeter.com/)
+ * [Blitz](https://www.blitz.io/)
+ * [Gatling](http://gatling.io/)
+ * [Loader.io](http://loader.io/)
+ * [HP LoadRunner](http://www8.hp.com/us/en/software-solutions/loadrunner-load-testing/index.html?jumpid=va_uwxy6ce9tr)
+ * [IBM Rational Performance Tester](http://www-03.ibm.com/software/products/en/performance)
+ * [Borland Silk Performer](http://www.borland.com/Products/Software-Testing/Performance-Testing/Silk-Performer)
+ * [Telerik Test Studio](http://www.telerik.com/teststudio)
+ * [LoadUI](http://www.loadui.org/)
+ * [Neotys](http://www.neotys.com/)
+ * [RadView](http://radview.com/website-load-testing-tools/)
+ * [CloudTest](http://www.soasta.com/products/cloudtest/)
+
+Articles:
+ * [Realtime Node.js App: A Stress Testing Story](http://bocoup.com/weblog/node-stress-test-analysis/)
