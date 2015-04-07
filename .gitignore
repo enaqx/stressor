@@ -36,3 +36,6 @@ tmp
 
 # OSX
 .DS_Store
+
+# Bower components
+public/components
