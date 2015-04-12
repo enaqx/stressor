@@ -1,4 +1,5 @@
 Load Testing Tools:
+ * [Netflix Vector](https://github.com/Netflix/vector)
  * [loadtest](https://github.com/alexfernandez/loadtest)
  * [siege](http://www.joedog.org/siege-home/)
  * [httperf](https://github.com/httperf/httperf)
@@ -19,3 +20,4 @@ Load Testing Tools:
 
 Articles:
  * [Realtime Node.js App: A Stress Testing Story](http://bocoup.com/weblog/node-stress-test-analysis/)
+ * [Netflix's On-Host Performance Monitoring Tool](http://techblog.netflix.com/2015/04/introducing-vector-netflixs-on-host.html)
