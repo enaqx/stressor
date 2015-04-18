@@ -1,4 +1,5 @@
 Load Testing Tools:
+ * [Node.js benchmarks](https://github.com/joyent/node/tree/master/benchmark)
  * [Netflix Vector](https://github.com/Netflix/vector)
  * [loadtest](https://github.com/alexfernandez/loadtest)
  * [siege](http://www.joedog.org/siege-home/)

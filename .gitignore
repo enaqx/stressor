@@ -39,3 +39,7 @@ tmp
 
 # Bower components
 public/components
+
+# Compiled bundles
+public/js/bundle.js
+public/js/bundle.min.js
