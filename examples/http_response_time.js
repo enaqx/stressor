@@ -2,7 +2,6 @@
  * Response time for HTTP
  */
 
-var http = require('http');
 var host = 'google.com';
 var port = 80;
 var start = new Date();

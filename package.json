@@ -28,6 +28,7 @@
     "body-parser": "^1.12.2",
     "browserify": "^9.0.7",
     "browserify-middleware": "^5.0.2",
+    "commander": "^2.8.0",
     "express": "^4.12.3",
     "flux": "^2.0.1",
     "forwarded-for": "^1.0.0",
