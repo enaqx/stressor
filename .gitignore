@@ -34,8 +34,13 @@ tmp
 # IDEA files
 .idea
 
-# OSX
+# Folder view configuration files
 .DS_Store
+Desktop.ini
+
+# Thumbnail cache files
+._*
+Thumbs.db
 
 # Bower components
 public/components

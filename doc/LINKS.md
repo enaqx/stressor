@@ -1,4 +1,5 @@
 Load Testing Tools:
+ * [Keymetrics.io](https://keymetrics.io/)
  * [Node.js benchmarks](https://github.com/joyent/node/tree/master/benchmark)
  * [Netflix Vector](https://github.com/Netflix/vector)
  * [loadtest](https://github.com/alexfernandez/loadtest)
@@ -21,4 +22,6 @@ Load Testing Tools:
 
 Articles:
  * [Realtime Node.js App: A Stress Testing Story](http://bocoup.com/weblog/node-stress-test-analysis/)
+ * [Realtime Node.js App: Stress Testing Procedure](http://bocoup.com/weblog/node-stress-test-procedure/)
+ * [Realtime Node.js App: Building a Server](http://bocoup.com/weblog/node-stress-test-server/)
  * [Netflix's On-Host Performance Monitoring Tool](http://techblog.netflix.com/2015/04/introducing-vector-netflixs-on-host.html)
