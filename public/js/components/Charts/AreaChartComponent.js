@@ -7,7 +7,7 @@
 
 
 var React = require('react');
-var areaChart = require('../charts/areaChart');
+var areaChart = require('../../charts/areaChart');
 
 
 var AreaChart = React.createClass({

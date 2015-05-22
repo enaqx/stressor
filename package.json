@@ -35,6 +35,7 @@
     "jsx-loader": "^0.13.1",
     "less": "^2.5.1",
     "less-loader": "^2.2.0",
+    "lodash": "^3.9.1",
     "object-assign": "^2.0.0",
     "purecss": "^0.6.0",
     "react": "^0.13.1",
