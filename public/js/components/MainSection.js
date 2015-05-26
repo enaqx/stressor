@@ -42,6 +42,8 @@ var MainSection = React.createClass({
   },
 
   render: function() {
+    // <MemoryChart />
+    // <CPUChart />
     return (
       <div className = 'content'>
         <AreaChart />

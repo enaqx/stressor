@@ -10,7 +10,7 @@ var socket = io('http://localhost:10002');
 
 var MemoryChart = React.createClass({
 	componentDidMount: function() {
-    var chartData = ['data'];
+    var chartData = ['memory'];
     var timeData = ['x'];
     for (var i = 1; i <= 180; i++) {
       chartData.push(0);
@@ -27,10 +27,10 @@ var MemoryChart = React.createClass({
           chartData
         ],
         types: {
-          data: 'bar'
+          memory: 'bar'
         },
         colors: {
-      		data: '#CCCC00',
+      		memory: '#CCCC00',
       	},
       },
       axis: {
@@ -48,11 +48,14 @@ var MemoryChart = React.createClass({
       },
       transition: {
         duration: 0
-      }
+      },
+      /* zoom: {
+        enabled: true
+      } */
     });
 
     socket.on('data', function(msg) {
-      chartData.push(msg.value.mem);
+      chartData.push(msg.mem);
       chartData.splice(1, 1);
       timeData.push(new Date());
       timeData.splice(1, 1);

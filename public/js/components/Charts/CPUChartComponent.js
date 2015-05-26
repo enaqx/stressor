@@ -10,7 +10,7 @@ var socket = io('http://localhost:10002');
 
 var CPUChart = React.createClass({
 	componentDidMount: function() {
-    var chartData = ['data'];
+    var chartData = ['cpu'];
     var timeData = ['x'];
     for (var i = 1; i <= 180; i++) {
       chartData.push(0);
@@ -27,10 +27,10 @@ var CPUChart = React.createClass({
           chartData
         ],
         types: {
-          data: 'bar'
+          cpu: 'bar'
         },
         colors: {
-      		data: '#333300',
+      		cpu: '#333300',
       	},
       },
       axis: {
@@ -48,11 +48,14 @@ var CPUChart = React.createClass({
       },
       transition: {
         duration: 0
-      }
+      },
+      /*zoom: {
+        enabled: true
+      }*/
     });
 
     socket.on('data', function(msg) {
-      chartData.push(msg.value.cpu);
+      chartData.push(msg.cpu);
       chartData.splice(1, 1);
       timeData.push(new Date());
       timeData.splice(1, 1);
