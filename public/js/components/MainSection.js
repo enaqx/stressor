@@ -6,7 +6,8 @@
 
 var React = require('react');
 var AreaChart = require('./Charts/AreaChartComponent');
-var Pagination = require('./Pagination.js');
+var MemoryChart = require('./Charts/MemoryChartComponent');
+var CPUChart = require('./Charts/CPUChartComponent');
 
 var sampleData = [
   {id: '5fbmzmtc', x: 7, y: 41, z: 6},
@@ -43,13 +44,9 @@ var MainSection = React.createClass({
   render: function() {
     return (
       <div className = 'content'>
-        <Pagination
-          domain={this.domain}
-          getData={this.getData}
-          setAppState={this.setAppState} />
-        <AreaChart
-          data={this.state.data}
-          domain={this.state.domain} />
+        <AreaChart />
+        <MemoryChart />
+        <CPUChart />
       </div>
     );
   }

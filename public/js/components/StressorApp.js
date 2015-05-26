@@ -12,7 +12,7 @@ var StressorApp = React.createClass({
   render: function() {
   	return (
       <div className="Stressor App">
-        <SideMenu />
+      	<SideMenu />
         <MainSection />
       </div>
     );

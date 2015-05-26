@@ -1,0 +1,19 @@
+{
+  "name": "stressor-client",
+  "version": "0.0.4",
+  "description": "Stressor client for aplication management and load-testing",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/enaqx/stressor"
+  },
+  "bugs": {
+    "url": "https://github.com/enaqx/stressor/issues"
+  },
+  "homepage": "https://github.com/enaqx/stressor",
+  "scripts": {},
+  "author": "Nick Raienko",
+  "license": "MIT",
+  "dependencies": {
+    "socket.io": "^1.3.5"
+  }
+}
