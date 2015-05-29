@@ -1,5 +1,5 @@
 /**
- * Memory Chart Component
+ * Random Chart Component
  */
 
 var React = require('react');
@@ -9,8 +9,8 @@ var _ = require('underscore');
 
 var socket = io('http://localhost:10002');
 
-var MemoryChart = React.createClass({
-	componentDidMount: function() {
+var RandomChart = React.createClass({
+  componentDidMount: function() {
     var colValues = 182;
     var colNames = [];
     var timeData = ['x'];
@@ -21,7 +21,7 @@ var MemoryChart = React.createClass({
     var col = [timeData];
 
     var chart = c3.generate({
-      bindto: '#memorychart',
+      bindto: '#randomchart',
       data: {
         x: 'x',
         columns: col,
@@ -49,15 +49,16 @@ var MemoryChart = React.createClass({
     });
 
     socket.on('data', function(msg) {
+      console.log(msg);
       timeData.push(msg.time * 1000);
-      _.each(msg.metrics.MemoryMetric, function(elem) {
+      _.each(msg.metrics.RandomDataMetric, function(elem) {
         var result = 0;
             sum = 0;
             length = elem.data.length;
         for (var i = 0; i < length; i++) {
           sum += elem.data[i];
         }
-        result = ((sum / length) / 1024 / 1024).toFixed(2);
+        result = (sum / length).toFixed(2);
 
         if (colNames.indexOf(elem.name) === -1) {
           colNames.push(elem.name);
@@ -85,18 +86,18 @@ var MemoryChart = React.createClass({
         columns: col,
       });
     });
-
-
   },
 
   render: function() {
     return (
       <div>
-        <h1>Memory Metric</h1>
-        <div id='memorychart'></div>
+        <h1>Random Data Metric</h1>
+        <div id='randomchart'></div>
       </div>
     );
   }
 });
 
-module.exports = MemoryChart;
+
+
+module.exports = RandomChart;

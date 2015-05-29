@@ -1,5 +1,5 @@
 /**
- * Process Management Client
+ * Process Management Client for Stressor
  */
 
 

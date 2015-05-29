@@ -1,8 +1,8 @@
 /**
- * Client for Stressor Web with Random Data Generation
+ * Example Client for Stressor with Random Data Generation
  */
 
-var pm = require('./pm');
+var pm = require('../pm/pm');
 
 pm.connect({}, function () {
   var probe = pm.probe();
@@ -12,6 +12,6 @@ pm.connect({}, function () {
   });
 
   setInterval(function() {
-    randomDataMetric.set(Math.random() * (300 - 100) + 100);
+    randomDataMetric.set(Math.random() * 100);
   }, 100);
 });

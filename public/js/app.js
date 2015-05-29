@@ -15,9 +15,6 @@ var StressorApp = require('./components/StressorApp');
 
 var io = require('socket.io-client');
 var socket = io(stressorURI);
-socket.on('data', function(msg) {
-	// console.log(msg);
-});
 
 React.render(
   <StressorApp />,

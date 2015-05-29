@@ -11,36 +11,21 @@ var socket = io('http://localhost:10002');
 
 var CPUChart = React.createClass({
 	componentDidMount: function() {
-    var chartData = {};
+    var colValues = 182;
+    var colNames = [];
     var timeData = ['x'];
-    var col = [
-      timeData,
-      ['pid#3323'],
-      ['pid#3327'],
-      ['pid#3329']
-    ];
-    for (var i = 1; i <= 180; i++) {
-      col[0].push(30);
-      col[1].push(Math.random() * (300 - 100) + 100);
-      col[2].push(Math.random() * (300 - 100) + 100);
-      col[3].push(Math.random() * (300 - 100) + 100);
+    for (var i = 0; i < (colValues - 1); i++) {
+      timeData[i + 1] =
+        (Math.round((Date.now() / 1000)) - (colValues + 2) + i) * 1000;
     }
+    var col = [timeData];
 
-    /* var chart = c3.generate({
+    var chart = c3.generate({
       bindto: '#cpuchart',
       data: {
         x: 'x',
-        xFormat: '%H:%M:%S',
-        columns: [
-          timeData,
-          chartData
-        ],
-        types: {
-          cpu: 'bar'
-        },
-        colors: {
-      		cpu: '#333300',
-      	},
+        columns: col,
+        type: 'bar',
       },
       axis: {
         x: {
@@ -48,6 +33,9 @@ var CPUChart = React.createClass({
           tick: {
             format: '%H:%M:%S'
           }
+        },
+        y: {
+          max: 90,
         }
       },
       bar: {
@@ -58,37 +46,13 @@ var CPUChart = React.createClass({
       transition: {
         duration: 0
       },
-      zoom: {
-        enabled: true
-      }
-    }); */
-
-    var chart = c3.generate({
-      bindto: '#cpuchart',
-      data: {
-        columns: col,
-        type: 'bar',
-        groups: [
-          [col[0][0], col[1][0], col[2][0], col[3][0]],
-        ]
+      color: {
+        pattern: ['#FED100', '#D52B1E', '#1E1E1E']
       },
-      grid: {
-        y: {
-          lines: [{value:0}]
-        }
-      },
-      bar: {
-        width: {
-          ratio: 1
-        }
-      },
-      transition: {
-          duration: 0
-        },
-      }
-    );
+    });
 
     socket.on('data', function(msg) {
+      timeData.push(msg.time * 1000);
       _.each(msg.metrics.CPUMetric, function(elem) {
         var result = 0;
             sum = 0;
@@ -96,30 +60,43 @@ var CPUChart = React.createClass({
         for (var i = 0; i < length; i++) {
           sum += elem.data[i];
         }
-        result = sum / length;
+        result = (sum / length).toFixed(2);
 
-        //console.log(elem.name, result);
-        var colNames = _.map(col, function(elem) {return elem[0]});
-
+        if (colNames.indexOf(elem.name) === -1) {
+          colNames.push(elem.name);
+          var colToInsert = [elem.name];
+          for (var i = 0; i < (colValues - 1); i++) colToInsert.push(0);
+          colToInsert.push(result);
+          col.push(colToInsert);
+        } else {
+          col[colNames.indexOf(elem.name) + 1].push(result);
+        };
       });
 
-      // chartData.push(msg.metrics.CPUMetric);
-      // chartData.shift();
-      /* timeData.push(new Date());
-      timeData.shift();
+      _.each(col, function(colName, colNameIndex) {
+        if (colName.length < colValues) {
+          col[colNameIndex].push(0);
+        }
+
+        if (colName.length > colValues) {
+          col[colNameIndex].splice(1, 1);
+        };
+      });
+
+      chart.groups([colNames]);
       chart.load({
-        columns: [
-          timeData,
-          ['data1', -30, 200, 200, 400, -150, 250],
-          ['data2', 130, 100, -100, 200, -150, 50],
-          ['data3', -230, 200, 200, -300, 250, 250]
-        ]
-      }); */
+        columns: col,
+      });
     });
   },
 
   render: function() {
-    return (<div id='cpuchart'></div>);
+    return (
+      <div>
+        <h1>CPU Metric</h1>
+        <div id='cpuchart'></div>
+      </div>
+    );
   }
 });
 

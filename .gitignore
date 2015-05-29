@@ -48,3 +48,4 @@ public/components
 # Compiled bundles
 public/js/bundle.js
 public/js/bundle.min.js
+public/js/bundle.js.map

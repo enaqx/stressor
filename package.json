@@ -1,6 +1,6 @@
 {
   "name": "stressor",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Application management with stress and load testing",
   "repository": {
     "type": "git",
@@ -54,6 +54,7 @@
     "build": "webpack -p",
     "builddev": "webpack -d",
     "builddevwatch": "webpack -d --watch",
-    "start": "node webserver"
+    "startStressor": "node lib/server",
+    "startWeb": "node lib/webserver"
   }
 }
