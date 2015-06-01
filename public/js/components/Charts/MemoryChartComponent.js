@@ -48,7 +48,7 @@ var MemoryChart = React.createClass({
       },
     });
 
-    socket.on('data', function(msg) {
+    /* socket.on('data', function(msg) {
       timeData.push(msg.time * 1000);
       _.each(msg.metrics.MemoryMetric, function(elem) {
         var result = 0;
@@ -84,8 +84,7 @@ var MemoryChart = React.createClass({
       chart.load({
         columns: col,
       });
-    });
-
+    }); */
 
   },
 

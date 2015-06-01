@@ -48,8 +48,7 @@ var RandomChart = React.createClass({
       },
     });
 
-    socket.on('data', function(msg) {
-      console.log(msg);
+    /* socket.on('data', function(msg) {
       timeData.push(msg.time * 1000);
       _.each(msg.metrics.RandomDataMetric, function(elem) {
         var result = 0;
@@ -85,7 +84,7 @@ var RandomChart = React.createClass({
       chart.load({
         columns: col,
       });
-    });
+    }); */
   },
 
   render: function() {

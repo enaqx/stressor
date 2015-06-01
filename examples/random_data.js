@@ -2,7 +2,7 @@
  * Example Client for Stressor with Random Data Generation
  */
 
-var pm = require('../pm/pm');
+var pm = require('../pm/');
 
 pm.connect({}, function () {
   var probe = pm.probe();

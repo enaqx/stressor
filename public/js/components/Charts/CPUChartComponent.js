@@ -51,7 +51,7 @@ var CPUChart = React.createClass({
       },
     });
 
-    socket.on('data', function(msg) {
+    /* socket.on('data', function(msg) {
       timeData.push(msg.time * 1000);
       _.each(msg.metrics.CPUMetric, function(elem) {
         var result = 0;
@@ -87,7 +87,7 @@ var CPUChart = React.createClass({
       chart.load({
         columns: col,
       });
-    });
+    }); */
   },
 
   render: function() {

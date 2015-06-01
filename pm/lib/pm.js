@@ -3,9 +3,15 @@
  */
 
 
-var io = require('socket.io-client');
+var cluster = require('cluster');
+var os = require('os');
+var path = require('path');
+
 var _ = require('underscore');
+var io = require('socket.io-client');
 var usage = require('usage');
+
+var numCPUs = os.cpus().length;
 
 var pid = process.pid;
 var ProcessManager = {};
