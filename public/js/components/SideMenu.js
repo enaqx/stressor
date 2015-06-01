@@ -27,6 +27,9 @@ var SideMenu = React.createClass({
                 <a href='#' className = 'pure-menu-link'>App</a>
               </li>
               <li className = 'pure-menu-item'>
+                <a href='#' className = 'pure-menu-link'>Errors</a>
+              </li>
+              <li className = 'pure-menu-item'>
                 <a href = '#' className = 'pure-menu-link'>Metrics</a>
               </li>
             </ul>
