@@ -1,8 +1,6 @@
 /**
  * Stressor App
  */
-
-
 'use strict';
 
 var stressorURI = 'http://localhost:10002';
